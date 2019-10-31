@@ -1,0 +1,25 @@
+from selenium.webdriver.common.by import By
+
+
+class Locators(object):
+    """Main Page Locators"""
+    SUBMIT_BUTTON = (By.ID, 'formSubmitButton')
+    CLEAR_BUTTON = (By.ID, 'formClearButton')
+    TERMS_CHECKBOX = (By.ID, 'formTermsAndConditionsCheckbox')
+    TERMS_LINK = (By.LINK_TEXT, 'Terms and Conditions')
+    TERMS_CONTENT = (By.XPATH, '/html/body/div[2]/div[2]/div/div/div[1]/h4')
+    LOGO = (By.XPATH, "//*[@id='northmillLogo']/img")
+
+    NAME_INPUT = (By.ID, "formNameInput")
+    EMAIL_INPUT = (By.ID, 'formEmailInput')
+    EXPERIENCE_INPUT = (By.XPATH, '/html/body/div/div/form/div[3]/div/input')
+    POSITION_SELECT = (By.ID, 'formRoleSelect')
+
+    """An error text elements"""
+    NAME_INPUT_ERROR = (By.XPATH, "//*[@id='" + NAME_INPUT[1] + "']/following-sibling::span[""@class='help-block']")
+    EMAIL_INPUT_ERROR = (By.XPATH, "//*[@id='" + EMAIL_INPUT[1] + "']/following-sibling::span[""@class='help-block']")
+    EXPERIENCE_INPUT_ERROR = (By.XPATH, "" + EXPERIENCE_INPUT[1] + "/following-sibling::span[""@class='help-block']")
+    POSITION_SELECT_ERROR = (By.XPATH, "//*[@id='" + POSITION_SELECT[1] + "']/following-sibling::span[""@class='help"
+                                                                          "-block']")
+    TERMS_CHECKBOX_ERROR = (
+        By.XPATH, "//*[@id='" + TERMS_CHECKBOX[1] + "']/following-sibling::span[""@class='help-block']")
