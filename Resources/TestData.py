@@ -1,6 +1,6 @@
 class TestData:
-    CHROME_EXECUTABLE_PATH = "C:/auto/drivers/chromedriver.exe"
-    FIREFOX_EXECUTABLE_PATH = "C:/auto/drivers/geckodriver.exe"
+    CHROME_EXECUTABLE_PATH = "../drivers/chromedriver.exe"
+    FIREFOX_EXECUTABLE_PATH = "../drivers/geckodriver.exe"
     NORTHMILL_WEBPAGE_LINK = 'https://www.northmill.com/'
     BASE_URL = "http://qa-recruitment-form.s3-website-eu-west-1.amazonaws.com"
     HOME_PAGE_HEADER_1 = "Hello Future Northmillian!"
