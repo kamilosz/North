@@ -177,15 +177,14 @@ class QARecruitTest(TestBaseClass):
         """
         1. Open the main page in the web browser.
         2. Locate and Enter in the experience field the invalid value, "eee" 
-        3. Check if value was entered correctly
-        4. Check if validation text is visible
+        3. Check if experience value back to its default, empty
+        4. Check if validation text is NOT visible
         """
         self.main_page = Pages.MainPage(self.driver)
         self.main_page.form_enter_experience(TestData.EXPERIENCE_INPUT_DATA_INVALID_02)
-        self.assertEqual(self.main_page.get_value_of_element(Locators.EXPERIENCE_INPUT),
-                         TestData.EXPERIENCE_INPUT_DATA_INVALID_02,
-                         "Test Failed. Experience is Not entered correctly")
-        self.assertTrue(self.main_page.validation_err_msg(Locators.EXPERIENCE_INPUT_ERROR, True),
+        self.assertEqual(self.main_page.get_value_of_element(Locators.EXPERIENCE_INPUT), "",
+                         "Test Failed. The Experience doesn't have it's default value")
+        self.assertTrue(self.main_page.validation_err_msg(Locators.EXPERIENCE_INPUT_ERROR, False),
                         "Test Failed. Experience in Years Error Message Validation Fails")
 
     def test_12_select_role_position(self):
@@ -221,9 +220,9 @@ class QARecruitTest(TestBaseClass):
         """
         1. Open the main page in the web browser.
         2. Locate and tick the Terms and Condition CheckBox 
-        3. Check if checkbex is selected
-        4. Locate and untick the Terms and Condition CheckBox
-        5. Check if checkbex is deselected
+        3. Check if checkbox is selected
+        4. Locate and un-tick the Terms and Condition CheckBox
+        5. Check if checkbox is deselected
         6. Check if validation text is visible
         """
         self.main_page = Pages.MainPage(self.driver)
@@ -262,7 +261,7 @@ class QARecruitTest(TestBaseClass):
         5. Locate and Click on Northmill's logo
         6. Check if opened webpage it's a Official Northmill's Site
         """
-        # open main page
+        # initiate the page object
         self.main_page = Pages.MainPage(self.driver)
 
         # Fill all required fields
@@ -294,7 +293,7 @@ class QARecruitTest(TestBaseClass):
         5. Locate and Click on Northmill's logo
         6. Check if opened webpage it's a Official Northmill's Site
         """
-        # open main page
+        # initiate the page object
         self.main_page = Pages.MainPage(self.driver)
 
         # Fill all required fields
@@ -324,7 +323,7 @@ class QARecruitTest(TestBaseClass):
         3. Locate and Click the Clear button
         3. Check if all of the values of input web elements return to their defaults values
         """
-        # open main page
+        # initiate the page object
         self.main_page = Pages.MainPage(self.driver)
 
         # Fill all fields
